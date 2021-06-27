@@ -22,7 +22,7 @@ def print_files(file_list, depth):
         for _ in range(depth):
             substr += '-'
 
-        print(substr+file)
+        print(substr + '\x1B[3m' + file + '\x1B[0m')
 
 
 def print_dir(path, dir_list, depth):
@@ -31,8 +31,8 @@ def print_dir(path, dir_list, depth):
         for _ in range(depth):
             substr += '-'
 
-        print(substr+dir)
-        main(path+'/'+dir, depth+1)
+        print(substr + '\033[1m' + dir + '\033[0m')
+        main(path + '/' + dir, depth + 1)
 
 
 if __name__ == '__main__':
